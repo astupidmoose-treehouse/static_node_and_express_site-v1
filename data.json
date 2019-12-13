@@ -1,0 +1,49 @@
+{
+	"projects": [
+		{
+			"id": 0,
+			"project_name": "Random Quote Generator",
+			"description": "This is a website that uses javascript to grab a random quote and outputs it.",
+			"technologies": ["Javascript", "HTML", "CSS"],
+			"live_link": "TBD",
+			"github_link": "https://github.com/astupidmoose/Random-Quote-Generator",
+			"image_urls": ["static/img/p1s1.PNG", "static/img/p1s1.PNG"]
+		},
+		{
+			"id": 1,
+			"project_name": "Pagination and Dynamic filtering",
+			"description": "Pagination and Dynamic filtering.",
+			"technologies": ["Javascript", "HTML", "CSS"],
+			"live_link": "TBD",
+			"github_link": "https://github.com/astupidmoose/list-pagination-filtering-v1",
+            "image_urls": ["static/img/p3s1.PNG", "static/img/p3s2.PNG"]
+		},
+		{
+			"id": 2,
+			"project_name": "Interactive Forms",
+			"description": "Interactive Forms.",
+			"technologies": ["Javascript", "HTML", "CSS"],
+			"live_link": "TBD",
+			"github_link": "https://github.com/astupidmoose/interactive-form-v1",
+            "image_urls": ["static/img/p2s1.PNG", "static/img/p2s2.PNG"]
+		},
+		{
+			"id": 3,
+			"project_name": "Satoshi Says Hangman Game",
+			"description": "Object-Oriented Programming Game",
+			"technologies": ["Javascript", "HTML", "CSS"],
+			"live_link": "TBD",
+			"github_link": "https://github.com/astupidmoose/oop_game-v2",
+			"image_urls": ["static/img/p4s1.PNG", "static/img/p4s2.PNG", "static/img/p4s3.PNG"]
+		},
+		{
+			"id": 4,
+			"project_name": "Public API Requests",
+			"description": "using public API's to work with data",
+			"technologies": ["Javascript", "HTML", "CSS"],
+			"live_link": "TBD",
+			"github_link": "https://github.com/astupidmoose/public_api_request-v1",
+			"image_urls": ["static/img/p5s1.PNG", "static/img/p5s2.PNG"]
+        }	
+    ]
+}
