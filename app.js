@@ -10,6 +10,8 @@ app.listen(port, () => console.log(`App listening on port ${port}!`));
 // Open the command line, navigate to your project, and run the npm init command to set up your package.json file.
 // Add your dependencies
 // At a minimum, your project will need Express and Pug installed via the command line.
+
+
 // Don't forget to use the --save flag if you're using a version of npm prior to 5.0, to ensure that references to the dependencies are stored in your package.json file.
 // Handle files and folders that shouldn't be stored in your repo
 // Create a .gitignore file in your directory and save a reference to the node_modules folder so that your repo doesn't store or track that folder.
