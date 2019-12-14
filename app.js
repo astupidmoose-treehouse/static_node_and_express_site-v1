@@ -14,22 +14,10 @@ app.get('/', (req, res) => res.render("index", {projects}));
 app.get('/about', (req, res) => res.render("about"));
 app.get('/projects/:id', (req, res) => {
     const project = projects[req.params.id];
-    res.render("project", project)
+    res.render("project", {project})
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
-
-
-// Images
-// Create an images folder in your directory to store your images.
-// TODO Check if profile image is OK at 550 x 350px
-// Add a profile pic of yourself that you would feel comfortable sharing with potential employers. It should present well at 550px by 350px.
-
-
-// TODO: Images are saved but need to be checked once project is up
-// Take screenshots of your projects. You will need at least two screenshots for each project.
-// A main shot for the landing page which should be a square image that can display well at 550px by 550px.
-// Between one and three additional images that can be any dimensions you want, but work well in this project as landscape images that present well at 1200px by 550px.
 
 // Handle errors
 // If a user navigates to a non-existent route, or if a request for a resource fails for whatever reason, your app should handle the error in a user friendly way.
