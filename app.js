@@ -24,17 +24,28 @@ app.get('/about', (req, res) => res.render("about"));
 
 // set a /projects route that looks for the Id passed via parameters. 
 // ! We need to check if Id exists
-app.get('/projects/:id', (req, res) => {
+app.get('/projects/:id', (req, res, next) => {
     // set the specific project based on the ID parameter
     const project = projects[req.params.id];
     if (project){
         // render the project pug file, passing in the project variable as an object. 
         res.render("project", {project})
     } else {
-        const err = new Error("OO SHIT!");
-        res.render("error", err);
+        const err = new Error("Not a Valid Project");
+        next(err);
     }
 });
+
+app.use(function (err, req, res, next) {
+    console.log(err);
+    //onsole.error(err.stack)
+    res.status(500).render("error", err);
+  })
+
+app.use(function (req, res, next) {
+    res.status(404).render("error");
+})
+  
 
 
 // lets listen to the port we specificed, and log a message to the console saying its running! 
