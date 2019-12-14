@@ -32,14 +32,13 @@ app.listen(port, () => console.log(`App listening on port ${port}!`));
 // Add good code comments
 
 // ! Extra Credit work
-// Customize the package.json file
-// Set up your package.json file so that running npm start will run the app.
 // Use error handling middleware to render a Pug template
 // Create a new Pug template in the views folder and name it error.pug. This Pug file should extend the layout, be set to block content, and display the error.message, error.status, and error.stack properties.
 // When the request URL is for a non-existent route, the error.pug template should be displayed in the browser along with the following properties:
 // error.message
 // error.status
 // error.stack
+
 // Customize the style
 // Change or add at least three of the following to make this project your own:
 // color
