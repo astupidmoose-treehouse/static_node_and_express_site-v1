@@ -1,23 +1,40 @@
+// create an express variable and require express module
 const express = require('express');
+
+// create an object for the json data we created so we can work with this object later
 const { projects } = require('./data.json');
 
-
-
+// create an app, using express
 const app = express();
+// assign the port for the app to 3000
 const port = 3000;
+
+// assign the PUG templating system as the view engine. 
 app.set('view engine', 'pug')
+
+// serve the "public" folder, through the "/static" route
 app.use('/static', express.static('public'))
 
-
-
+// * Set our routes
+// set a home route, pass it the projects object. It will use the index pug file
 app.get('/', (req, res) => res.render("index", {projects}));
+
+// set a about route, using the about pug file
 app.get('/about', (req, res) => res.render("about"));
+
+// set a /projects route that looks for the Id passed via parameters. 
+// ! We need to check if Id exists
 app.get('/projects/:id', (req, res) => {
+    // set the specific project based on the ID parameter
     const project = projects[req.params.id];
+    // render the project pug file, passing in the project variable as an object. 
     res.render("project", {project})
 });
 
+
+// lets listen to the port we specificed, and log a message to the console saying its running! 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
+
 
 // Handle errors
 // If a user navigates to a non-existent route, or if a request for a resource fails for whatever reason, your app should handle the error in a user friendly way.
