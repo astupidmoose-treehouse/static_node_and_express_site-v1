@@ -27,8 +27,13 @@ app.get('/about', (req, res) => res.render("about"));
 app.get('/projects/:id', (req, res) => {
     // set the specific project based on the ID parameter
     const project = projects[req.params.id];
-    // render the project pug file, passing in the project variable as an object. 
-    res.render("project", {project})
+    if (project){
+        // render the project pug file, passing in the project variable as an object. 
+        res.render("project", {project})
+    } else {
+        const err = new Error("OO SHIT!");
+        res.render("error", err);
+    }
 });
 
 
