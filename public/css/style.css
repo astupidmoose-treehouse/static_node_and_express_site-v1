@@ -148,3 +148,27 @@ a:hover{
 .portfolio-bio{
     line-height: 25px;
 }
+
+/*
+Custom CSS goes here:
+*/
+
+h1,h2,h3,h4,h5,p{
+  font-family: 'Poppins', serif;
+}
+
+p{
+  font-family: 'Lato', serif;
+}
+
+#linkedin{
+    background-color: #0e76a8;
+  }
+
+#twitter{
+  background-color: #1da1f2;
+}
+
+#github{
+  background-color: #6e5494;
+}
