@@ -32,45 +32,29 @@ app.get('/projects/:id', (req, res, next) => {
         res.render("project", {project})
     } else {
         const err = new Error("Not a Valid Project");
+        err.status = 500;
+        console.log(err.message);
         next(err);
     }
 });
 
-app.use(function (err, req, res, next) {
-    console.log(err);
-    //onsole.error(err.stack)
-    res.status(500).render("error", err);
-  })
+app.use((err,req,res,next) => {
+    res.locals.error = err;
+    res.status(err.status);
+    res.render("error");
+})
 
 app.use(function (req, res, next) {
-    res.status(404).render("error");
+    const err = new Error("404 Error - Requested page does not exist")
+    err.status = 404;
+    console.log(err.message);
+    res.locals.error = err;
+    res.status(err.status);
+    res.render("error");
 })
-  
-
 
 // lets listen to the port we specificed, and log a message to the console saying its running! 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
-
-
-// Handle errors
-// If a user navigates to a non-existent route, or if a request for a resource fails for whatever reason, your app should handle the error in a user friendly way.
-// Add an error handler to app.js that sets the error message to a user friendly message, and sets the status code.
-// Log out a user friendly message to the console when the app is pointed at a URL that doesn't exist as a route in the app, such as /error/error.
-// Refer to the video on Error handling Middleware, which is linked in the project resources list.
-
-
-// Layout, CSS and styles
-// The layout of the finished project should match the provided mockups.
-// To really make this project your own, you should customize the CSS following the suggestions in the Extra Credit section at the bottom of this page.
-// Add good code comments
-
-// ! Extra Credit work
-// Use error handling middleware to render a Pug template
-// Create a new Pug template in the views folder and name it error.pug. This Pug file should extend the layout, be set to block content, and display the error.message, error.status, and error.stack properties.
-// When the request URL is for a non-existent route, the error.pug template should be displayed in the browser along with the following properties:
-// error.message
-// error.status
-// error.stack
 
 // Customize the style
 // Change or add at least three of the following to make this project your own:
